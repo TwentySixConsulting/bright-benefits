@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bright Interactive — Benefits Intelligence Report | TwentySix Consulting</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --navy:       #0c1829;
+      --navy-mid:   #152238;
+      --navy-light: #1e2f4a;
+      --gold:       #c9a84c;
+      --gold-light: #e2c97e;
+      --gold-pale:  #fdf8ec;
+      --cream:      #f7f5f0;
+      --white:      #ffffff;
+      --text:       #0c1829;
+      --text-mid:   #374151;
+      --text-soft:  #6b7280;
+      --green:      #15803d;
+      --green-bg:   #dcfce7;
+      --amber:      #b45309;
+      --amber-bg:   #fef3c7;
+      --above-green:#0e6b2e;
+      --above-bg:   #bbf7d0;
+      --red:        #dc2626;
+      --red-bg:     #fee2e2;
+      --col-s-head: #1a3158;
+      --col-t-head: #3b2000;
+      --shadow-sm:  0 1px 3px rgba(12,24,41,0.07);
+      --shadow-md:  0 4px 20px rgba(12,24,41,0.09), 0 1px 4px rgba(12,24,41,0.05);
+      --shadow-lg:  0 12px 48px rgba(12,24,41,0.13), 0 4px 12px rgba(12,24,41,0.07);
+      --radius:     8px;
+      --radius-lg:  14px;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--cream);
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 14px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ── */
+    .site-header {
+      background: var(--navy);
+      position: sticky; top: 0; z-index: 200;
+      box-shadow: 0 2px 24px rgba(0,0,0,0.4);
+    }
+    .header-inner {
+      max-width: 1380px; margin: 0 auto;
+      padding: 14px 40px;
+      display: flex; align-items: center; gap: 20px;
+    }
+    .header-wordmark {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+      flex-shrink: 0;
+    }
+    .header-wordmark .wm-name {
+      color: var(--white);
+      font-size: 17px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
+      line-height: 1;
+    }
+    .header-wordmark .wm-name span { color: var(--white); }
+    .hd { width: 1px; height: 26px; background: rgba(255,255,255,0.12); flex-shrink: 0; }
+    .header-title { flex: 1; }
+    .header-title h1 { color: #fff; font-size: 13px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .header-title span { color: rgba(255,255,255,0.4); font-size: 11px; }
+    .client-chip {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(201,168,76,0.15); border: 1px solid rgba(201,168,76,0.3);
+      color: var(--gold-light); font-size: 11px; font-weight: 600;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      padding: 4px 13px; border-radius: 100px;
+    }
+    .date-note { color: rgba(255,255,255,0.3); font-size: 10px; display: block; text-align: right; margin-top: 3px; }
+
+    /* ── SECTION NAV ── */
+    .section-nav {
+      background: var(--white); border-bottom: 1px solid rgba(0,0,0,0.07);
+      position: sticky; top: 60px; z-index: 190;
+      box-shadow: var(--shadow-sm);
+    }
+    .nav-inner {
+      max-width: 1380px; margin: 0 auto; padding: 0 40px;
+      display: flex; overflow-x: auto;
+    }
+    .nav-inner::-webkit-scrollbar { display: none; }
+    .nav-inner a {
+      display: flex; align-items: center; gap: 7px;
+      padding: 12px 16px; text-decoration: none;
+      color: var(--text-soft); font-size: 12px; font-weight: 600;
+      letter-spacing: 0.04em; white-space: nowrap;
+      border-bottom: 2px solid transparent;
+      transition: color 0.15s, border-color 0.15s;
+    }
+    .nav-inner a:hover { color: var(--navy); border-bottom-color: var(--gold); }
+    .nav-inner a svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, var(--navy) 0%, var(--navy-mid) 55%, #1c3050 100%);
+      padding: 80px 40px 72px; text-align: center;
+      position: relative; overflow: hidden;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 25% 60%, rgba(201,168,76,0.09) 0%, transparent 100%),
+                  radial-gradient(ellipse 50% 50% at 75% 40%, rgba(201,168,76,0.06) 0%, transparent 100%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: ''; position: absolute; bottom: 0; left: 0; right: 0;
+      height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.45), transparent);
+    }
+    .hero-content { position: relative; max-width: 800px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.25);
+      color: var(--gold-light); font-size: 10px; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 100px; margin-bottom: 26px;
+    }
+    .hero h2 {
+      color: var(--white); font-size: 46px; font-weight: 800;
+      line-height: 1.1; margin-bottom: 18px; letter-spacing: -0.025em;
+    }
+    .hero h2 em { font-style: normal; color: var(--gold); }
+    .hero-sub {
+      color: rgba(255,255,255,0.55); font-size: 15.5px;
+      max-width: 560px; margin: 0 auto 44px; line-height: 1.75;
+    }
+    .hero-stats {
+      display: flex; justify-content: center;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg); overflow: hidden;
+      background: rgba(255,255,255,0.03);
+      max-width: 600px; margin: 0 auto;
+    }
+    .hs { flex: 1; padding: 18px 20px; border-right: 1px solid rgba(255,255,255,0.08); }
+    .hs:last-child { border-right: none; }
+    .hs-val { color: var(--gold-light); font-size: 20px; font-weight: 800; display: block; letter-spacing: -0.02em; }
+    .hs-lbl { color: rgba(255,255,255,0.35); font-size: 10px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-top: 2px; display: block; }
+
+    /* ── SECTION CARDS (navigation) ── */
+    .sec-cards-wrap {
+      background: var(--navy-mid);
+      padding: 44px 40px;
+      border-bottom: 1px solid rgba(201,168,76,0.15);
+    }
+    .sec-cards-inner { max-width: 1380px; margin: 0 auto; }
+    .sec-cards-label {
+      text-align: center; color: rgba(255,255,255,0.35);
+      font-size: 10px; font-weight: 700; letter-spacing: 0.14em;
+      text-transform: uppercase; margin-bottom: 24px;
+    }
+    .sec-cards-grid {
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 14px;
+    }
+    .sec-card {
+      display: flex; flex-direction: column;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: var(--radius-lg);
+      padding: 22px 18px 18px;
+      text-decoration: none;
+      position: relative; overflow: hidden;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+      cursor: pointer;
+    }
+    .sec-card:hover {
+      background: rgba(201,168,76,0.1);
+      border-color: rgba(201,168,76,0.4);
+      transform: translateY(-3px);
+    }
+    .sec-card::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0;
+      height: 2px; background: var(--gold); opacity: 0;
+      transition: opacity 0.2s;
+    }
+    .sec-card:hover::before { opacity: 1; }
+    .sc-num {
+      font-size: 10px; font-weight: 800; letter-spacing: 0.1em;
+      color: rgba(201,168,76,0.5); margin-bottom: 12px; display: block;
+    }
+    .sc-icon {
+      width: 36px; height: 36px; border-radius: 9px;
+      background: rgba(255,255,255,0.07);
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px; flex-shrink: 0;
+      color: var(--gold-light);
+    }
+    .sc-icon svg { width: 18px; height: 18px; }
+    .sc-title {
+      color: var(--white); font-size: 12px; font-weight: 700;
+      line-height: 1.3; flex: 1; margin-bottom: 14px;
+    }
+    .sc-arrow {
+      display: flex; align-items: center; gap: 5px;
+      color: rgba(201,168,76,0.6); font-size: 10px; font-weight: 700;
+      letter-spacing: 0.08em; text-transform: uppercase;
+      transition: color 0.2s;
+    }
+    .sc-arrow svg { width: 14px; height: 14px; }
+
+    /* ── CARD COLOUR VARIANTS ── */
+    .sc-c1 { --cc: 110, 168, 254; }
+    .sc-c2 { --cc: 45,  212, 191; }
+    .sc-c3 { --cc: 251, 113, 133; }
+    .sc-c4 { --cc: 251, 191,  36; }
+    .sc-c5 { --cc:  52, 211, 153; }
+    .sc-c6 { --cc: 167, 139, 250; }
+
+    :is(.sc-c1,.sc-c2,.sc-c3,.sc-c4,.sc-c5,.sc-c6) {
+      background: rgba(var(--cc), 0.08);
+      border-color: rgba(var(--cc), 0.22);
+    }
+    :is(.sc-c1,.sc-c2,.sc-c3,.sc-c4,.sc-c5,.sc-c6)::before {
+      background: rgb(var(--cc));
+      opacity: 0.55;
+    }
+    :is(.sc-c1,.sc-c2,.sc-c3,.sc-c4,.sc-c5,.sc-c6) .sc-icon {
+      background: rgba(var(--cc), 0.16);
+      color: rgb(var(--cc));
+    }
+    :is(.sc-c1,.sc-c2,.sc-c3,.sc-c4,.sc-c5,.sc-c6) .sc-num {
+      color: rgba(var(--cc), 0.6);
+    }
+    :is(.sc-c1,.sc-c2,.sc-c3,.sc-c4,.sc-c5,.sc-c6) .sc-arrow {
+      color: rgba(var(--cc), 0.55);
+    }
+    :is(.sc-c1,.sc-c2,.sc-c3,.sc-c4,.sc-c5,.sc-c6):hover {
+      background: rgba(var(--cc), 0.14);
+      border-color: rgba(var(--cc), 0.4);
+    }
+    :is(.sc-c1,.sc-c2,.sc-c3,.sc-c4,.sc-c5,.sc-c6):hover::before {
+      opacity: 1;
+    }
+    :is(.sc-c1,.sc-c2,.sc-c3,.sc-c4,.sc-c5,.sc-c6):hover .sc-arrow {
+      color: rgb(var(--cc));
+    }
+
+    /* ── PAGE BODY ── */
+    .page-body { max-width: 1380px; margin: 0 auto; padding: 0 40px 80px; }
+
+    /* ── INTRO ── */
+    .intro-section { padding: 48px 0 0; }
+    .intro-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 34px 38px; box-shadow: var(--shadow-md);
+      border-left: 4px solid var(--gold);
+    }
+    .intro-card p { color: var(--text-mid); font-size: 14.5px; line-height: 1.85; margin-bottom: 14px; }
+    .intro-card p:last-child { margin-bottom: 0; }
+    .intro-card strong { color: var(--text); font-weight: 600; }
+
+    /* ── RULE ── */
+    .rule { height: 1px; background: linear-gradient(to right, transparent, rgba(201,168,76,0.2), transparent); margin-top: 48px; }
+
+    /* ── BENCH SECTION ── */
+    .bench-section { padding: 48px 0 0; }
+    .sec-hd { margin-bottom: 22px; }
+    .sec-label-row { display: flex; align-items: center; gap: 10px; margin-bottom: 8px; }
+    .sec-num-badge {
+      display: flex; align-items: center; justify-content: center;
+      width: 26px; height: 26px; border-radius: 50%;
+      background: var(--navy); color: var(--gold);
+      font-size: 11px; font-weight: 800; flex-shrink: 0;
+    }
+    .sec-eyebrow { font-size: 10px; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--gold); }
+    .sec-title { font-size: 21px; font-weight: 800; color: var(--navy); letter-spacing: -0.02em; }
+    .sec-desc { font-size: 13px; color: var(--text-soft); margin-top: 5px; }
+
+    /* ── PROVISION CARDS ── */
+    .prov-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 22px; }
+    .prov-card {
+      background: var(--white); border-radius: var(--radius-lg);
+      padding: 24px 22px; box-shadow: var(--shadow-md);
+      border-top: 3px solid var(--gold); position: relative; overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .prov-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-lg); }
+    .prov-card::after {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 80px; height: 80px;
+      background: radial-gradient(circle at top right, rgba(201,168,76,0.07), transparent 70%);
+    }
+    .pc-icon {
+      width: 38px; height: 38px; border-radius: 10px;
+      background: linear-gradient(135deg, var(--navy), var(--navy-light));
+      display: flex; align-items: center; justify-content: center;
+      margin-bottom: 14px; color: var(--gold-light);
+    }
+    .pc-icon svg { width: 18px; height: 18px; }
+    .prov-card h3 { font-size: 13.5px; font-weight: 700; color: var(--navy); margin-bottom: 6px; }
+    .prov-card p { font-size: 12.5px; color: var(--text-soft); line-height: 1.55; margin-bottom: 14px; }
+    .p-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 10px; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .badge-green { background: var(--green-bg); color: var(--green); border: 1px solid rgba(21,128,61,0.2); }
+    .badge-above { background: var(--above-bg); color: var(--above-green); border: 1px solid rgba(14,107,46,0.25); }
+    .badge-amber { background: var(--amber-bg); color: var(--amber); border: 1px solid rgba(180,83,9,0.2); }
+    .badge-red   { background: var(--red-bg);   color: var(--red);   border: 1px solid rgba(220,38,38,0.2); }
+
+    /* ── TABLE WRAP ── */
+    .tbl-wrap {
+      background: var(--white); border-radius: var(--radius-lg);
+      overflow: hidden; box-shadow: var(--shadow-md);
+      margin-top: 22px; margin-bottom: 16px;
+      border: 1px solid rgba(0,0,0,0.04);
+    }
+    .tbl-legend {
+      display: flex; align-items: center; gap: 22px;
+      padding: 11px 22px; background: #f9f8f6;
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+    .tbl-legend span {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 11px; font-weight: 600; color: var(--text-soft); letter-spacing: 0.03em;
+    }
+    .ld { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+    .ld-s { background: #4a7fcb; }
+    .ld-t { background: #c47d1a; }
+
+    table { width: 100%; border-collapse: collapse; font-size: 13px; }
+
+    /* Column widths — 3 columns */
+    table colgroup col:first-child  { width: 22%; }
+    table colgroup col:nth-child(2),
+    table colgroup col:nth-child(3) { width: 39%; }
+
+    /* Header */
+    thead tr { border-bottom: none; }
+    thead th {
+      padding: 16px 20px; text-align: left;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase;
+      vertical-align: bottom; line-height: 1.3;
+    }
+    thead th:first-child  { background: var(--navy); color: var(--gold-light); }
+    thead th:nth-child(2) { background: var(--col-s-head); color: #a8c6e8; }
+    thead th:nth-child(3) { background: var(--col-t-head); color: #f0c870; position: relative; }
+    thead th:nth-child(3)::before {
+      content: 'PRIMARY COMPARATOR';
+      display: block; font-size: 8px; font-weight: 800;
+      letter-spacing: 0.12em; color: rgba(240,200,112,0.7);
+      margin-bottom: 4px;
+    }
+    .col-sub { display: block; font-size: 9.5px; font-weight: 400; opacity: 0.55; margin-top: 3px; letter-spacing: 0.05em; }
+
+    /* Body rows */
+    tbody tr:nth-child(odd)  { background: var(--white); }
+    tbody tr:nth-child(even) { background: #fafaf8; }
+    tbody tr { transition: background 0.1s; border-bottom: 1px solid rgba(0,0,0,0.045); }
+    tbody tr:last-child { border-bottom: none; }
+    tbody tr:hover { background: rgba(201,168,76,0.035) !important; }
+
+    tbody td { padding: 15px 20px; vertical-align: top; color: var(--text-mid); line-height: 1.65; }
+    tbody td:first-child {
+      font-weight: 600; color: var(--navy); font-size: 12.5px;
+      border-right: 1px solid rgba(0,0,0,0.06);
+    }
+    .cell-sub { display: block; font-size: 11px; font-weight: 400; color: var(--text-soft); margin-top: 3px; }
+
+    /* Subtle column left border tints on body */
+    tbody td:nth-child(2) { border-left: 2px solid rgba(74,127,203,0.12); }
+    tbody td:nth-child(3) { border-left: 2px solid rgba(196,125,26,0.25); background: rgba(196,125,26,0.04); }
+
+    /* Status cells */
+    .yes-cell {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--green); font-weight: 600; font-size: 12.5px;
+    }
+    .yes-cell svg { width: 15px; height: 15px; flex-shrink: 0; }
+    .no-cell {
+      display: inline-flex; align-items: center; gap: 6px;
+      color: var(--text-soft); font-size: 12.5px; font-style: italic;
+    }
+    .no-cell svg { width: 14px; height: 14px; flex-shrink: 0; opacity: 0.5; }
+    .mixed-cell { color: var(--amber); font-weight: 500; font-size: 12.5px; }
+
+    /* ── CALLOUT ── */
+    .callout {
+      background: linear-gradient(150deg, var(--navy) 0%, var(--navy-mid) 100%);
+      border-radius: var(--radius-lg); padding: 24px 28px;
+      position: relative; overflow: hidden;
+    }
+    .callout::before {
+      content: ''; position: absolute; top: -20px; right: -20px;
+      width: 120px; height: 120px;
+      background: radial-gradient(circle, rgba(201,168,76,0.12), transparent 70%);
+    }
+    .callout-hd { display: flex; align-items: center; gap: 10px; margin-bottom: 13px; }
+    .callout-hd svg { width: 18px; height: 18px; color: var(--gold); flex-shrink: 0; }
+    .callout-hd h4 { color: var(--gold-light); font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+    .callout ul { list-style: none; display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 9px; }
+    .callout li { display: flex; align-items: flex-start; gap: 9px; color: rgba(255,255,255,0.68); font-size: 13px; line-height: 1.55; }
+    .callout li::before { content: ''; display: inline-block; width: 5px; height: 5px; border-radius: 50%; background: var(--gold); margin-top: 7px; flex-shrink: 0; }
+
+    /* ── FOOTER ── */
+    footer { background: var(--navy); padding: 44px 40px; text-align: center; margin-top: 60px; }
+    .footer-wordmark { display: inline-block; margin-bottom: 20px; }
+    .footer-wordmark .fw-name { color: rgba(255,255,255,0.5); font-size: 18px; font-weight: 800; letter-spacing: -0.02em; }
+    .footer-wordmark .fw-name em { font-style: normal; color: rgba(201,168,76,0.65); }
+    .footer-conf {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(201,168,76,0.1); border: 1px solid rgba(201,168,76,0.2);
+      color: rgba(201,168,76,0.6); font-size: 10px; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      padding: 4px 13px; border-radius: 100px;
+      margin-top: 4px; margin-bottom: 20px;
+    }
+    .footer-txt { color: rgba(255,255,255,0.32); font-size: 12px; line-height: 1.85; }
+    .footer-txt strong { color: rgba(255,255,255,0.55); font-weight: 500; }
+    .footer-txt a { color: var(--gold); text-decoration: none; }
+    .footer-rule { height: 1px; background: rgba(255,255,255,0.07); max-width: 360px; margin: 14px auto; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 1200px) { .sec-cards-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (max-width: 900px)  { .sec-cards-grid { grid-template-columns: repeat(2, 1fr); } .prov-grid { grid-template-columns: repeat(2,1fr); } }
+    @media (max-width: 640px)  {
+      .hero h2 { font-size: 28px; } .page-body { padding: 0 20px 60px; }
+      .header-inner { padding: 12px 20px; } .sec-cards-wrap { padding: 32px 20px; }
+      .sec-cards-grid { grid-template-columns: 1fr 1fr; } .prov-grid { grid-template-columns: 1fr; }
+      thead th { font-size: 10px; padding: 11px 13px; } tbody td { padding: 12px 13px; font-size: 12px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="site-header">
+  <div class="header-inner">
+    <div class="header-wordmark">
+      <span class="wm-name">Twenty<span>Six</span></span>
+    </div>
+    <div class="hd"></div>
+    <div class="header-title">
+      <h1>Benefits Intelligence</h1>
+      <span>Benefits Benchmarking &amp; Market Analysis</span>
+    </div>
+    <div>
+      <span class="client-chip">
+        <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><rect width="8" height="8" rx="1.5"/></svg>
+        Bright Interactive
+      </span>
+      <span class="date-note">March 2026 · Confidential</span>
+    </div>
+  </div>
+</header>
+
+<!-- SECTION NAV -->
+<nav class="section-nav">
+  <div class="nav-inner">
+    <a href="#provision">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Bright Benefits
+    </a>
+    <a href="#core">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+      Core Benefits
+    </a>
+    <a href="#working-time">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+      Working Time
+    </a>
+    <a href="#health">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+      Health &amp; Well-being
+    </a>
+    <a href="#financial">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3 13.125C3 12.504 3.504 12 4.125 12h2.25c.621 0 1.125.504 1.125 1.125v6.75C7.5 20.496 6.996 21 6.375 21h-2.25A1.125 1.125 0 013 19.875v-6.75zM9.75 8.625c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125v11.25c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V8.625zM16.5 4.125c0-.621.504-1.125 1.125-1.125h2.25C20.496 3 21 3.504 21 4.125v15.75c0 .621-.504 1.125-1.125 1.125h-2.25a1.125 1.125 0 01-1.125-1.125V4.125z"/></svg>
+      Financial Support
+    </a>
+    <a href="#esg">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12.75 3.03v.568c0 .334.148.65.405.864l1.068.89c.442.369.535 1.01.216 1.49l-.51.766a2.25 2.25 0 01-1.161.886l-.143.048a1.107 1.107 0 00-.57 1.664c.369.555.169 1.307-.427 1.605L9 13.125l.423 1.059a.956.956 0 01-1.652.928l-.679-.906a1.125 1.125 0 00-1.906.172L4.5 15.75l-.612.153M12.75 3.031a9 9 0 00-8.862 12.872M12.75 3.031a9 9 0 016.69 14.036m0 0l-.177-.529A2.249 2.249 0 0017.5 15.28a2.25 2.25 0 00-2.122 1.581l-.126.5a2.25 2.25 0 01-2.17 1.664H12.5a2.25 2.25 0 01-1.786-.87l-.718-.96a2.25 2.25 0 00-3.107-.51l-.39.274a9 9 0 01-1.374-6.62"/></svg>
+      ESG / DEI
+    </a>
+    <a href="#learning">
+      <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+      Learning &amp; Dev
+    </a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-content">
+    <div class="hero-eyebrow">
+      <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><rect width="8" height="8" rx="1.5"/></svg>
+      Prepared by TwentySix
+    </div>
+    <h2>Bright Interactive<br><em>Benefits Benchmark Report</em></h2>
+    <p class="hero-sub">A comprehensive analysis of Bright Interactive's benefits provision, benchmarked against Small Private Sector and Technology Sector market practice.</p>
+    <div class="hero-stats">
+      <div class="hs"><span class="hs-val">2</span><span class="hs-lbl">Markets Analysed</span></div>
+      <div class="hs"><span class="hs-val">6</span><span class="hs-lbl">Benefit Categories</span></div>
+      <div class="hs"><span class="hs-val">30+</span><span class="hs-lbl">Benefits Reviewed</span></div>
+      <div class="hs"><span class="hs-val">Mar 2026</span><span class="hs-lbl">Report Date</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION NAVIGATION CARDS -->
+<div class="sec-cards-wrap">
+  <div class="sec-cards-inner">
+    <p class="sec-cards-label">Jump to a section</p>
+    <div class="sec-cards-grid">
+
+      <a class="sec-card sc-c1" href="#core">
+        <span class="sc-num">01</span>
+        <div class="sc-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+        </div>
+        <span class="sc-title">Traditional Core Benefits</span>
+        <span class="sc-arrow">
+          Explore
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </span>
+      </a>
+
+      <a class="sec-card sc-c2" href="#working-time">
+        <span class="sc-num">02</span>
+        <div class="sc-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+        </div>
+        <span class="sc-title">Working Time &amp; Time Off Arrangements</span>
+        <span class="sc-arrow">
+          Explore
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </span>
+      </a>
+
+      <a class="sec-card sc-c3" href="#health">
+        <span class="sc-num">03</span>
+        <div class="sc-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+        </div>
+        <span class="sc-title">Health &amp; Well-Being</span>
+        <span class="sc-arrow">
+          Explore
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </span>
+      </a>
+
+      <a class="sec-card sc-c4" href="#financial">
+        <span class="sc-num">04</span>
+        <div class="sc-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg>
+        </div>
+        <span class="sc-title">Financial Support</span>
+        <span class="sc-arrow">
+          Explore
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </span>
+      </a>
+
+      <a class="sec-card sc-c5" href="#esg">
+        <span class="sc-num">05</span>
+        <div class="sc-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.115 5.19l.319 1.913A6 6 0 008.11 10.36L9.75 12l-.387.775c-.217.433-.132.956.21 1.298l1.348 1.348c.21.21.329.497.329.795v1.089c0 .426.24.815.622 1.006l.153.076c.433.217.956.132 1.298-.21l.723-.723a8.7 8.7 0 002.288-4.042 1.087 1.087 0 00-.358-1.099l-1.33-1.108c-.251-.21-.582-.299-.905-.245l-1.17.195a1.125 1.125 0 01-.98-.314l-.295-.295a1.125 1.125 0 010-1.591l.13-.132a1.125 1.125 0 011.3-.21l.603.302a.809.809 0 001.086-1.086L14.25 7.5l1.256-.837a4.5 4.5 0 001.528-1.732l.146-.292M6.115 5.19A9 9 0 1017.18 4.64M6.115 5.19A8.965 8.965 0 0112 3c1.929 0 3.716.607 5.18 1.64"/></svg>
+        </div>
+        <span class="sc-title">ESG / Diversity, Equity &amp; Inclusion</span>
+        <span class="sc-arrow">
+          Explore
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </span>
+      </a>
+
+      <a class="sec-card sc-c6" href="#learning">
+        <span class="sc-num">06</span>
+        <div class="sc-icon">
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg>
+        </div>
+        <span class="sc-title">Learning &amp; Personal Development</span>
+        <span class="sc-arrow">
+          Explore
+          <svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5L21 12m0 0l-7.5 7.5M21 12H3"/></svg>
+        </span>
+      </a>
+
+    </div>
+  </div>
+</div>
+
+<!-- PAGE BODY -->
+<div class="page-body">
+
+  <!-- INTRO -->
+  <section class="intro-section">
+    <div class="intro-card">
+      <p>The following pages set out the detail of benefits practice across the two markets. <strong>The Technology Sector is the primary comparator for Bright Interactive</strong>, given the nature of the business, with Small Private Sector included for additional context. For each benefit, we set out Bright Interactive's provision as we understand it and then describe <strong>'typical' market practice</strong>. We've done this rather than use our standard LQ/M/UQ practice because the latter is misleading in that not all organisations will have all of the benefits listed to the level described. Therefore, to be 'below' in some areas does not necessarily mean benefits provision is deficient — <strong>the absolutely most important factor is that benefits are aligned with the needs of the (current and future) employee base</strong>.</p>
+      <p>Below each table, we've listed any interesting ideas that we came across that aren't necessarily typical market practice, but might be worth noting.</p>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- BRIGHT PROVISION -->
+  <section class="bench-section" id="provision">
+    <div class="sec-hd">
+      <div class="sec-label-row">
+        <span class="sec-eyebrow">Current Provision — benchmarked vs Technology Sector</span>
+      </div>
+      <h2 class="sec-title">Bright Interactive's Benefits</h2>
+      <p class="sec-desc">All benefits currently provided by Bright Interactive, as understood at the time of this report. Market position reflects comparison against the <strong>Technology Sector</strong> as the primary comparator.</p>
+    </div>
+
+    <!-- Pay & Leave -->
+    <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);margin-bottom:12px;margin-top:8px;">Pay &amp; Leave</p>
+    <div class="prov-grid">
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"/></svg></div>
+        <h3>Profit Share</h3>
+        <p>Company-wide profit share scheme.</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5"/></svg></div>
+        <h3>Annual Leave</h3>
+        <p>25 days plus bank holidays, with an additional day for birthday.</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 21v-8.25M15.75 21v-8.25M8.25 21v-8.25M3 9l9-6 9 6m-1.5 12V10.332A48.36 48.36 0 0012 9.75c-2.551 0-5.056.2-7.5.582V21M3 21h18M12 6.75h.008v.008H12V6.75z"/></svg></div>
+        <h3>Pension</h3>
+        <p>5% employee / 4% employer contribution via salary exchange. Employer matches up to 4%.</p>
+        <span class="p-badge badge-amber">Slightly below market — 4% employer</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg></div>
+        <h3>Sick Pay</h3>
+        <p>14 days full pay, then tiered enhanced pay based on service, followed by 80% salary up to week 13, then Group Income Protection at 80% for up to 60 months.</p>
+        <span class="p-badge badge-above"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Above market — generous tiered scheme</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+        <h3>Maternity Pay</h3>
+        <p>Enhanced maternity pay based on service: from 2 weeks full pay (26 wks service) up to 6 weeks full + 8 weeks full/spread (104 wks service).</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+        <h3>Paternity Pay</h3>
+        <p>2 weeks full pay. Proposal being considered to increase to 6 weeks full pay.</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+    </div>
+
+    <!-- Working Time & Flexibility -->
+    <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);margin-bottom:12px;margin-top:32px;">Working Time &amp; Flexibility</p>
+    <div class="prov-grid">
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 11-18 0 9 9 0 0118 0z"/></svg></div>
+        <h3>Flexible Working Hours</h3>
+        <p>Flexible working hours policy provided.</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"/></svg></div>
+        <h3>Hybrid Working</h3>
+        <p>Hybrid/flexible working policy provided.</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12h3.75M9 15h3.75M9 18h3.75m3 .75H18a2.25 2.25 0 002.25-2.25V6.108c0-1.135-.845-2.098-1.976-2.192a48.424 48.424 0 00-1.123-.08m-5.801 0c-.065.21-.1.433-.1.664 0 .414.336.75.75.75h4.5a.75.75 0 00.75-.75 2.25 2.25 0 00-.1-.664m-5.8 0A2.251 2.251 0 0113.5 2.25H15c1.012 0 1.867.668 2.15 1.586m-5.8 0c-.376.023-.75.05-1.124.08C9.095 4.01 8.25 4.973 8.25 6.108V8.25m0 0H4.875c-.621 0-1.125.504-1.125 1.125v11.25c0 .621.504 1.125 1.125 1.125h9.75c.621 0 1.125-.504 1.125-1.125V9.375c0-.621-.504-1.125-1.125-1.125H8.25zM6.75 12h.008v.008H6.75V12zm0 3h.008v.008H6.75V15zm0 3h.008v.008H6.75V18z"/></svg></div>
+        <h3>Paid Jury Service</h3>
+        <p>Jury service policy provided.</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+    </div>
+
+    <!-- Health & Wellbeing -->
+    <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);margin-bottom:12px;margin-top:32px;">Health &amp; Wellbeing</p>
+    <div class="prov-grid">
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg></div>
+        <h3>Group Income Protection</h3>
+        <p>80% of basic salary for up to 60 months after 13-week deferment period.</p>
+        <span class="p-badge badge-above"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Above market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M10.5 1.5H8.25A2.25 2.25 0 006 3.75v16.5a2.25 2.25 0 002.25 2.25h7.5A2.25 2.25 0 0018 20.25V3.75a2.25 2.25 0 00-2.25-2.25H13.5m-3 0V3h3V1.5m-3 0h3m-3 18.75h3"/></svg></div>
+        <h3>Help@Hand App</h3>
+        <p>Digital health app providing access to GP consultations, mental health support, and wellbeing services.</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg></div>
+        <h3>Monthly Wellness Contribution</h3>
+        <p>Monthly wellness contribution provided.</p>
+        <span class="p-badge badge-above"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Above market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.036 12.322a1.012 1.012 0 010-.639C3.423 7.51 7.36 4.5 12 4.5c4.638 0 8.573 3.007 9.963 7.178.07.207.07.431 0 .639C20.577 16.49 16.64 19.5 12 19.5c-4.638 0-8.573-3.007-9.963-7.178z"/><path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg></div>
+        <h3>Eye Test &amp; Glasses for VDU Use</h3>
+        <p>DSE eye test fee payment provided.</p>
+        <span class="p-badge badge-green"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>At market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.501 20.118a7.5 7.5 0 0114.998 0A17.933 17.933 0 0112 21.75c-2.676 0-5.216-.584-7.499-1.632z"/></svg></div>
+        <h3>Physio Costs for RSI</h3>
+        <p>Contribution to physiotherapy costs for RSI-related conditions.</p>
+        <span class="p-badge badge-above"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Above market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 8.25v-1.5m0 1.5c-1.355 0-2.697.056-4.024.166C6.845 8.51 6 9.473 6 10.608v2.513m6-4.871c1.355 0 2.697.056 4.024.166C17.155 8.51 18 9.473 18 10.608v2.513M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 018.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0111.964-3.07M12 6.375a3.375 3.375 0 11-6.75 0 3.375 3.375 0 016.75 0zm8.25 2.25a2.625 2.625 0 11-5.25 0 2.625 2.625 0 015.25 0z"/></svg></div>
+        <h3>Office Snacks, Fruit &amp; Friday Drinks</h3>
+        <p>Free fruit, snacks, tea, coffee, and Friday beer fridge from 4pm.</p>
+        <span class="p-badge badge-above"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Above market</span>
+      </div>
+    </div>
+
+    <!-- Social & Culture -->
+    <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);margin-bottom:12px;margin-top:32px;">Social &amp; Culture</p>
+    <div class="prov-grid">
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 003.741-.479 3 3 0 00-4.682-2.72m.94 3.198l.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0112 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 016 18.719m12 0a5.971 5.971 0 00-.941-3.197m0 0A5.995 5.995 0 0012 12.75a5.995 5.995 0 00-5.058 2.772m0 0a3 3 0 00-4.681 2.72 8.986 8.986 0 003.74.477m.94-3.197a5.971 5.971 0 00-.94 3.197M15 6.75a3 3 0 11-6 0 3 3 0 016 0zm6 3a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0zm-13.5 0a2.25 2.25 0 11-4.5 0 2.25 2.25 0 014.5 0z"/></svg></div>
+        <h3>Funded Team Socials &amp; Events</h3>
+        <p>Social committee funds, staff events, lunch club, and team treats.</p>
+        <span class="p-badge badge-above"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Above market</span>
+      </div>
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M21 11.25v8.25a1.5 1.5 0 01-1.5 1.5H5.25a1.5 1.5 0 01-1.5-1.5v-8.25M12 4.875A2.625 2.625 0 109.375 7.5H12m0-2.625V7.5m0-2.625A2.625 2.625 0 1114.625 7.5H12m0 0V21m-8.625-9.75h18c.621 0 1.125-.504 1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125h-18c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125z"/></svg></div>
+        <h3>Thank You &amp; Anniversary Rewards</h3>
+        <p>Length of service awards, birthday treats, and thank you rewards.</p>
+        <span class="p-badge badge-above"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Above market</span>
+      </div>
+    </div>
+
+    <!-- Learning & Development -->
+    <p style="font-size:11px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--text-soft);margin-bottom:12px;margin-top:32px;">Learning &amp; Development</p>
+    <div class="prov-grid">
+      <div class="prov-card">
+        <div class="pc-icon"><svg fill="none" viewBox="0 0 24 24" stroke-width="1.6" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.26 10.147a60.436 60.436 0 00-.491 6.347A48.627 48.627 0 0112 20.904a48.627 48.627 0 018.232-4.41 60.46 60.46 0 00-.491-6.347m-15.482 0a50.57 50.57 0 00-2.658-.813A59.905 59.905 0 0112 3.493a59.902 59.902 0 0110.399 5.84c-.896.248-1.783.52-2.658.814m-15.482 0A50.697 50.697 0 0112 13.489a50.702 50.702 0 017.74-3.342M6.75 15a.75.75 0 100-1.5.75.75 0 000 1.5zm0 0v-3.675A55.378 55.378 0 0112 8.443m-7.007 11.55A5.981 5.981 0 006.75 15.75v-1.5"/></svg></div>
+        <h3>Growth Opportunities</h3>
+        <p>8 hours per month dedicated to personal growth and development.</p>
+        <span class="p-badge badge-above"><svg width="10" height="10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z" clip-rule="evenodd"/></svg>Above market — 8 hrs/month</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- SECTION 1 — CORE BENEFITS -->
+  <section class="bench-section" id="core">
+    <div class="sec-hd">
+      <div class="sec-label-row">
+        <span class="sec-num-badge">1</span>
+        <span class="sec-eyebrow">Typical Market Practice</span>
+      </div>
+      <h2 class="sec-title">Traditional Core Benefits</h2>
+    </div>
+    <div class="tbl-wrap">
+      <div class="tbl-legend">
+        <span><span class="ld ld-s"></span>Small Private Sector</span>
+        <span><span class="ld ld-t"></span>Technology Sector</span>
+      </div>
+      <table>
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Small Private Sector<span class="col-sub">Independent &amp; Owner-Managed</span></th>
+            <th>Technology Sector<span class="col-sub">Tech &amp; Digital</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bonus / Profit Share</td>
+            <td>Yes – either profit share or performance bonus common, typically between 5–20% depending on role and organisation</td>
+            <td>Yes – either profit share or performance bonus common, typically between 10–20% depending on role and organisation</td>
+          </tr>
+          <tr>
+            <td>Annual Leave</td>
+            <td>20–25 days (plus bank holidays), increasing with service</td>
+            <td>Median of 25–28 days, typically including an extra day increasing with service</td>
+          </tr>
+          <tr>
+            <td>Additional Days<span class="cell-sub">e.g. Christmas closedown, birthday</span></td>
+            <td><span class="mixed-cell">Relatively uncommon</span></td>
+            <td><span class="mixed-cell">Relatively uncommon</span></td>
+          </tr>
+          <tr>
+            <td>Buy &amp; Sell Leave</td>
+            <td><span class="mixed-cell">Relatively uncommon</span></td>
+            <td>Ability to buy/sell up to 5 days</td>
+          </tr>
+          <tr>
+            <td>Pension</td>
+            <td>Auto-enrolment levels are typical market practice</td>
+            <td>5–6% employer contribution is typical, although ability to match contributions up to a typical level of 8%</td>
+          </tr>
+          <tr>
+            <td>Sick Pay</td>
+            <td>10 days' full, followed by discretionary element</td>
+            <td>3 months' full; 3 months' half pay (followed by Permanent Health Insurance), however some organisations beginning to offer unlimited sick pay</td>
+          </tr>
+          <tr>
+            <td>Maternity Pay</td>
+            <td>Statutory</td>
+            <td>Enhanced maternity pay: 8–16 weeks full pay, then SMP</td>
+          </tr>
+          <tr>
+            <td>Paternity Pay</td>
+            <td>Statutory</td>
+            <td>2–4 weeks enhanced paternity pay at full or near-full pay</td>
+          </tr>
+          <tr>
+            <td>Share Schemes</td>
+            <td>Formal equity is relatively rare and is more commonly used as a tool in founder-led progressive organisations</td>
+            <td>Share options and Save as You Earn share schemes are the norm</td>
+          </tr>
+          <tr>
+            <td>Car Allowance</td>
+            <td>Typically for job need rather than status</td>
+            <td>Car allowance is a typical perk for all employees</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-hd">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+        <h4>Less Common Benefits &amp; Ideas Worth Noting</h4>
+      </div>
+      <ul>
+        <li>Additional days (up to 3) as Well-Being / Mental Health Days that can be taken in addition to annual leave at short notice</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- SECTION 2 — WORKING TIME -->
+  <section class="bench-section" id="working-time">
+    <div class="sec-hd">
+      <div class="sec-label-row">
+        <span class="sec-num-badge">2</span>
+        <span class="sec-eyebrow">Typical Market Practice</span>
+      </div>
+      <h2 class="sec-title">Other Working Time &amp; Time Off Arrangements</h2>
+    </div>
+    <div class="tbl-wrap">
+      <div class="tbl-legend">
+        <span><span class="ld ld-s"></span>Small Private Sector</span>
+        <span><span class="ld ld-t"></span>Technology Sector</span>
+      </div>
+      <table>
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Small Private Sector<span class="col-sub">Independent &amp; Owner-Managed</span></th>
+            <th>Technology Sector<span class="col-sub">Tech &amp; Digital</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Flexible Working</td>
+            <td>Statutory only</td>
+            <td>Leading industry for flexible working hours, with over 90% of organisations accommodating, in addition to compressed hours</td>
+          </tr>
+          <tr>
+            <td>Hybrid / Remote Working</td>
+            <td>Mixed practice, but with the emphasis on being office-based</td>
+            <td>Leading industry for hybrid model, typically 2–3 days permitted to work from home for most roles</td>
+          </tr>
+          <tr>
+            <td>Sabbaticals</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span> – common after 3–5 years' service, typically ranging from 1–3 months</td>
+          </tr>
+          <tr>
+            <td>Compassionate Leave</td>
+            <td>Discretionary</td>
+            <td>Up to 5 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-hd">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+        <h4>Less Common Benefits &amp; Ideas Worth Noting</h4>
+      </div>
+      <ul>
+        <li>Paid carers leave – we found a few organisations offering this up to a week (or in one case two weeks)</li>
+        <li>4 day working week – CIPD found 6% of employers offer this to all staff</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- SECTION 3 — HEALTH -->
+  <section class="bench-section" id="health">
+    <div class="sec-hd">
+      <div class="sec-label-row">
+        <span class="sec-num-badge">3</span>
+        <span class="sec-eyebrow">Typical Market Practice</span>
+      </div>
+      <h2 class="sec-title">Health &amp; Well-Being</h2>
+    </div>
+    <div class="tbl-wrap">
+      <div class="tbl-legend">
+        <span><span class="ld ld-s"></span>Small Private Sector</span>
+        <span><span class="ld ld-t"></span>Technology Sector</span>
+      </div>
+      <table>
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Small Private Sector<span class="col-sub">Independent &amp; Owner-Managed</span></th>
+            <th>Technology Sector<span class="col-sub">Tech &amp; Digital</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Life Assurance</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span> – 3× salary</td>
+          </tr>
+          <tr>
+            <td>Employee Assistance Programme</td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span></td>
+          </tr>
+          <tr>
+            <td>Private Medical Insurance</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>This is a standard benefit with 70–80% of tech organisations offering. Coverage is typically for individuals but with some dependent coverage, often via salary sacrifice schemes.</td>
+          </tr>
+          <tr>
+            <td>Health Cash Plan<span class="cell-sub">Including dental</span></td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span> – covering basic level 1–2 (dental, optical, physiotherapy and GP consultations) up to modest limits</td>
+          </tr>
+          <tr>
+            <td>Permanent Health Insurance / Income Protection</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td><span class="mixed-cell">Mixed practice</span> – with around half of technology sector employers offering this</td>
+          </tr>
+          <tr>
+            <td>Digital GP</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Typically offered as part of PMI or Health Cash Plan</td>
+          </tr>
+          <tr>
+            <td>Health Screening</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Typically offered as part of PMI or Health Cash Plan</td>
+          </tr>
+          <tr>
+            <td>Gym Membership</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Subsidised gym membership or corporate discount scheme</td>
+          </tr>
+          <tr>
+            <td>Flu Jabs</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span></td>
+          </tr>
+          <tr>
+            <td>Eye Care Vouchers</td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span></td>
+          </tr>
+          <tr>
+            <td>Access to Mental Health Apps</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-hd">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+        <h4>Less Common Benefits &amp; Ideas Worth Noting</h4>
+      </div>
+      <ul>
+        <li>Free fruit or other food (this was very common at one point but appears to have fallen out of favour)</li>
+        <li>Programmes to encourage employee health, physical fitness and relaxation courses</li>
+        <li>Menopause &amp; fertility support</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- SECTION 4 — FINANCIAL -->
+  <section class="bench-section" id="financial">
+    <div class="sec-hd">
+      <div class="sec-label-row">
+        <span class="sec-num-badge">4</span>
+        <span class="sec-eyebrow">Typical Market Practice</span>
+      </div>
+      <h2 class="sec-title">Financial Support</h2>
+    </div>
+    <div class="tbl-wrap">
+      <div class="tbl-legend">
+        <span><span class="ld ld-s"></span>Small Private Sector</span>
+        <span><span class="ld ld-t"></span>Technology Sector</span>
+      </div>
+      <table>
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Small Private Sector<span class="col-sub">Independent &amp; Owner-Managed</span></th>
+            <th>Technology Sector<span class="col-sub">Tech &amp; Digital</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Financial Education</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Often tech organisations provide an annual financial wellbeing webinar or EAP-linked financial guidance</td>
+          </tr>
+          <tr>
+            <td>Low Cost Loans &amp; Savings Plans</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Low cost loans typically given for specific items, such as Season Tickets. Save As You Earn / Share Save schemes are common.</td>
+          </tr>
+          <tr>
+            <td>Retail Discounts</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Online retail discount provider is typical</td>
+          </tr>
+          <tr>
+            <td>Cycle to Work Scheme</td>
+            <td><span class="mixed-cell">Relatively uncommon</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span> – widely offered as a salary sacrifice benefit</td>
+          </tr>
+          <tr>
+            <td>Homeworker Financial Allowance</td>
+            <td><span class="mixed-cell">Relatively uncommon</span></td>
+            <td>Median technology sector employers offer a structured homeworker allowance of approximately £150–£300 per year, designed to cover broadband, utilities and consumables</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-hd">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+        <h4>Less Common Benefits &amp; Ideas Worth Noting</h4>
+      </div>
+      <ul>
+        <li>Earned pay access (Employer Salary Access Scheme) – 11% of respondents to the CIPD's Reward Management Survey had this</li>
+        <li>Rental deposit loan scheme</li>
+        <li>Motorsave – discounts on car maintenance</li>
+        <li>Energy switching schemes</li>
+        <li>Will writing</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- SECTION 5 — ESG -->
+  <section class="bench-section" id="esg">
+    <div class="sec-hd">
+      <div class="sec-label-row">
+        <span class="sec-num-badge">5</span>
+        <span class="sec-eyebrow">Typical Market Practice</span>
+      </div>
+      <h2 class="sec-title">Environmental, Social &amp; Governance / Diversity, Equity &amp; Inclusion</h2>
+    </div>
+    <div class="tbl-wrap">
+      <div class="tbl-legend">
+        <span><span class="ld ld-s"></span>Small Private Sector</span>
+        <span><span class="ld ld-t"></span>Technology Sector</span>
+      </div>
+      <table>
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Small Private Sector<span class="col-sub">Independent &amp; Owner-Managed</span></th>
+            <th>Technology Sector<span class="col-sub">Tech &amp; Digital</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Pension Invested Ethically</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td><span class="mixed-cell">Mixed practice</span></td>
+          </tr>
+          <tr>
+            <td>Commitment to Tackling Pay Inequality</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Formal DEI policy, some targeted initiatives, partial data reporting</td>
+          </tr>
+          <tr>
+            <td>Paid Volunteering Days</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Typically provides an average of 2 days</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="callout">
+      <div class="callout-hd">
+        <svg fill="none" viewBox="0 0 24 24" stroke-width="1.8" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"/></svg>
+        <h4>Less Common Benefits &amp; Ideas Worth Noting</h4>
+      </div>
+      <ul>
+        <li>Discounts on energy efficient appliances</li>
+        <li>Mentoring opportunities for under-represented groups to break down occupational barriers</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="rule"></div>
+
+  <!-- SECTION 6 — LEARNING -->
+  <section class="bench-section" id="learning">
+    <div class="sec-hd">
+      <div class="sec-label-row">
+        <span class="sec-num-badge">6</span>
+        <span class="sec-eyebrow">Typical Market Practice</span>
+      </div>
+      <h2 class="sec-title">Learning &amp; Personal Development</h2>
+    </div>
+    <div class="tbl-wrap">
+      <div class="tbl-legend">
+        <span><span class="ld ld-s"></span>Small Private Sector</span>
+        <span><span class="ld ld-t"></span>Technology Sector</span>
+      </div>
+      <table>
+        <colgroup><col><col><col></colgroup>
+        <thead>
+          <tr>
+            <th>Benefit</th>
+            <th>Small Private Sector<span class="col-sub">Independent &amp; Owner-Managed</span></th>
+            <th>Technology Sector<span class="col-sub">Tech &amp; Digital</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Personal Development Budget</td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Typical mid-market tech employers offer £1,000–£1,500 per employee per year</td>
+          </tr>
+          <tr>
+            <td>Free Access to Courses &amp; Videos</td>
+            <td><span class="mixed-cell">Mixed practice</span></td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span></td>
+          </tr>
+          <tr>
+            <td>Professional Subscriptions Paid For</td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span> – typically 1 subscription paid for</td>
+            <td><span class="yes-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l6 6 9-13.5"/></svg>Yes</span> – typically 1–2 subscriptions paid for</td>
+          </tr>
+          <tr>
+            <td>Career Development<span class="cell-sub">Training courses, work shadowing, mentoring</span></td>
+            <td><span class="no-cell"><svg fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/></svg>No</span></td>
+            <td>Structured L&amp;D programme with defined pathways and annual budget</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+</div><!-- /page-body -->
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-wordmark">
+    <span class="fw-name">Twenty<em>Six</em></span>
+  </div>
+  <div class="footer-conf">
+    <svg width="8" height="8" viewBox="0 0 8 8" fill="currentColor"><rect width="8" height="8" rx="1.5"/></svg>
+    Confidential Report
+  </div>
+  <p class="footer-txt">Prepared by <strong>TwentySix</strong> for <strong>Bright Interactive</strong> &nbsp;·&nbsp; March 2026</p>
+  <div class="footer-rule"></div>
+  <p class="footer-txt">
+    This report is confidential and prepared solely for the use of Bright Interactive. The information contained herein is based on market data available at the time of preparation and is subject to change.<br>
+    © 2026 TwentySix &nbsp;·&nbsp; <a href="https://www.twentysixconsulting.co.uk">www.twentysixconsulting.co.uk</a>
+  </p>
+</footer>
+
+</body>
+</html>
